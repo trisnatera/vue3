@@ -16,7 +16,9 @@
   <body>
     <div id="app">
         <h5>Hello World</h5>
+        <p>{{ name }}</p>
         <p>{{ message }}</p>
+        <button>{{ nilai }}</button>
         <button :disabled="isDisabled">Cek Button</button>
         <div v-bind="objAttr">object attr</div>
     </div>
@@ -26,6 +28,7 @@
             name: 'Trisna Tera',
             message: 'Hallo selamat datang',
             isDisabled:true,
+            count:0,
             objAttr: {
                 id: "text-data",
                 class: "red"
@@ -35,6 +38,14 @@
         createApp({
             data(){
                 return member
+            },
+            method(){
+              increamentAdd(){
+                this.count++
+              }
+            },
+            mounted(){
+              this.name = 'agus'
             }
         }).mount("#app")
     </script>
